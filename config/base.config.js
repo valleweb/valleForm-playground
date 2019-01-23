@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 
@@ -35,7 +35,9 @@ module.exports = {
     new webpack.EnvironmentPlugin({ NODE_ENV: null }),
     new CopyWebpackPlugin([
       { from: './src/index.html', to: './' },
-      { from: './src/serviceWorkers.js', to: './' }
+      { from: './src/serviceWorkers.js', to: './' },
+      { from: './src/assets/styles/style.css', to: './style.css' },
+      { from: './src/favicon.png', to: './favicon.png' }
     ])
   ],
 
@@ -44,4 +46,4 @@ module.exports = {
     filename: 'bundle.js'
   }
 
-}
+};
