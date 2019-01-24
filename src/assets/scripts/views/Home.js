@@ -1,7 +1,9 @@
 /* eslint max-len: 0 */
 
 import React from 'react';
+import { useState } from 'react';
 import useInput from '../hooks/useInput';
+import ValleForm from 'valleform';
 //import useKeyboard from '../hooks/useKeyboard';
 
 /**
@@ -11,13 +13,17 @@ import useInput from '../hooks/useInput';
 
 const Home = () => {
 
+  const [lines, setLines] = useState([]);
   const jsonData = useInput();
-
 
   // useKeyboard(32, () => {
   //   //console.log(jsonData.value);
   // });
 
+  const generateForm = () => {
+    const lines = JSON.parse(jsonData.value).tabs[0].lines;
+    setLines(lines);
+  };
 
   return (
     <div className = 'play'>
@@ -34,7 +40,7 @@ const Home = () => {
         <textarea 
           id = 'jsonData'
           className = 'input__field'
-          autoFocus
+          // autoFocus
           { ...jsonData }
         >
         </textarea>
@@ -42,14 +48,22 @@ const Home = () => {
       </div>
 
       <div className = 'play__output'>
-        <div className = 'body'></div>
+        <div className = 'body'>
+
+          <ValleForm
+            rows = { lines }
+            baseApi = { 'http://localhost:3000' }
+            canonicalApi = { 'form_0.tabs[0].api' }
+          />
+
+        </div>
       </div>
 
       <div className = 'play__footer'>
   
         <div className = 'play__footer__left'>
         
-          <button className = 'btn'>
+          <button className = 'btn' onClick = { generateForm } >
             <svg className = 'btn__icon btn__icon--left'
               xmlns = 'http://www.w3.org/2000/svg'
               width = '24'
@@ -62,8 +76,8 @@ const Home = () => {
           </button>
           
           <div className = 'info'>
-            <span className = 'info__text'> valleForm version: 0.1.0 </span>
-            <span className = 'info__text'> Data structure version: 0.1.0 </span>
+            <span className = 'info__text'> valleForm version: 0.3.1 </span>
+            <span className = 'info__text'> Data structure version: 0.2.0 </span>
           </div>
 
         </div>

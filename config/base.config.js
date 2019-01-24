@@ -37,7 +37,9 @@ module.exports = {
       { from: './src/index.html', to: './' },
       { from: './src/serviceWorkers.js', to: './' },
       { from: './src/assets/styles/style.css', to: './style.css' },
-      { from: './src/favicon.png', to: './favicon.png' }
+      { from: './node_modules/valleform/css/main.css', to: './valleForm.css' },
+      { from: './src/favicon.png', to: './favicon.png' },
+      { from: './bower_components', to: './bower_components' }
     ])
   ],
 
