@@ -95,7 +95,6 @@ html, body, #root {
 .btn {
   font-size: 14px;
   font-weight: 400;
-  display: inline-block;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -166,4 +165,15 @@ html, body, #root {
 
 .btn--copy {
   background: #1b9098;
+}
+
+.input {
+  width: 200px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 4px;
+  padding: 10px;
+  border-radius: 3px;
+  box-sizing: border-box;
 }

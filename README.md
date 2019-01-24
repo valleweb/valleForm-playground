@@ -12,6 +12,7 @@ Clone this repository and install its dependencies:
 $ git clone https://github.com/valleweb/valleForm-playground.git
 $ cd valleForm-playground
 $ yarn
+$ bower install
 ```
 ### Build / Start App
 

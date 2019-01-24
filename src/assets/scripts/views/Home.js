@@ -5,6 +5,7 @@ import React from 'react';
 import { useState } from 'react';
 import useInput from '../hooks/useInput';
 import ValleForm from 'valleform';
+import FileSaver from 'file-saver';
 
 /**
  * TODO: Add JSDocs.
@@ -15,6 +16,7 @@ const Home = () => {
 
   const [lines, setLines] = useState([]);
   const jsonData = useInput();
+  const fileName = useInput('');
 
   // useKeyboard(32, () => {
   //   //console.log(jsonData.value);
@@ -28,6 +30,16 @@ const Home = () => {
   const cleanForm = (e) => {
     setLines([]);
     jsonData.onChange(e);
+  };
+
+  const saveAs = () => {
+    const blob = new Blob(
+      [jsonData.value],
+      { type: 'application/json;charset=utf-8' }
+    );
+
+    FileSaver.saveAs(blob, fileName.value);
+    fileName.value = '';
   };
 
   return (
@@ -104,7 +116,7 @@ const Home = () => {
     
         <div className = 'play__footer__right'>
 
-          <button className = 'btn btn--inactive' disabled> 
+          {/* <button className = 'btn btn--inactive' disabled> 
             <svg 
               className = 'btn__icon btn__icon--left'
               xmlns = 'http://www.w3.org/2000/svg'
@@ -115,9 +127,15 @@ const Home = () => {
               <path d = 'M8 10h-5l9-10 9 10h-5v10h-8v-10zm11 9v3h-14v-3h-2v5h18v-5h-2z'/>
             </svg>
             Import .json
-          </button>
+          </button> */}
 
-          <button className = 'btn btn--inactive' disabled>
+          <input 
+            className = 'input'
+            placeholder = 'filename.extension'
+            { ...fileName }
+          />
+
+          <button className = 'btn' onClick = { saveAs }>
             <svg
               className = 'btn__icon btn__icon--left'
               xmlns = 'http://www.w3.org/2000/svg'
