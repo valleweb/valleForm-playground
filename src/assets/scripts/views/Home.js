@@ -1,10 +1,10 @@
 /* eslint max-len: 0 */
+/* eslint jsx-a11y/no-autofocus: 0 */
 
 import React from 'react';
 import { useState } from 'react';
 import useInput from '../hooks/useInput';
 import ValleForm from 'valleform';
-//import useKeyboard from '../hooks/useKeyboard';
 
 /**
  * TODO: Add JSDocs.
@@ -25,6 +25,11 @@ const Home = () => {
     setLines(lines);
   };
 
+  const cleanForm = (e) => {
+    setLines([]);
+    jsonData.onChange(e);
+  };
+
   return (
     <div className = 'play'>
 
@@ -32,7 +37,11 @@ const Home = () => {
 
         <div className = 'input__title'>
           Insert the json code bellow.
-          <button className = 'btn btn--small btn--inactive' disabled>
+          <button 
+            className = 'btn btn--small btn--copy'
+            data-clipboard-target = '#jsonData'
+            id = 'copyToClipboard'
+          >
             Copy
           </button>
         </div>
@@ -40,7 +49,7 @@ const Home = () => {
         <textarea 
           id = 'jsonData'
           className = 'input__field'
-          // autoFocus
+          autoFocus
           { ...jsonData }
         >
         </textarea>
@@ -74,7 +83,18 @@ const Home = () => {
             </svg>
             Generate
           </button>
-          
+
+          <button className = 'btn btn--cancel' onClick = { cleanForm } >
+            <svg className = 'btn__icon btn__icon--left'
+              xmlns = 'http://www.w3.org/2000/svg'
+              width = '24'
+              height = '24'
+              viewBox = '0 0 24 24'>
+              <path d = 'M3 6v18h18v-18h-18zm19-4v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.731 2 1.631 2h5.712z'/>
+            </svg>
+            Clean all
+          </button>
+      
           <div className = 'info'>
             <span className = 'info__text'> valleForm version: 0.3.1 </span>
             <span className = 'info__text'> Data structure version: 0.2.0 </span>

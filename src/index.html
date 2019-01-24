@@ -20,5 +20,10 @@
 <body>
   <div id="root"></div>
   <script src="./bundle.js"></script>
+  <script src="./clipboard.min.js"></script>
+  <script>
+    const clipboard = new ClipboardJS('#copyToClipboard');
+    clipboard.on('success', e => e.clearSelection());
+  </script>
 </body>
 </html>

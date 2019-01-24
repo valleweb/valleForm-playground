@@ -39,7 +39,8 @@ module.exports = {
       { from: './src/assets/styles/style.css', to: './style.css' },
       { from: './node_modules/valleform/css/main.css', to: './valleForm.css' },
       { from: './src/favicon.png', to: './favicon.png' },
-      { from: './bower_components', to: './bower_components' }
+      { from: './bower_components', to: './bower_components' },
+      { from: './node_modules/clipboard/dist/clipboard.min.js', to: './clipboard.min.js' },
     ])
   ],
 

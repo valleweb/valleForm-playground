@@ -55,6 +55,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
+    "clipboard": "^2.0.4",
     "react": "16.7.0-alpha.0",
     "react-dom": "16.7.0-alpha.0",
     "valleform": "^0.3.1"

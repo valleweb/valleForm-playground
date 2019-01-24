@@ -1,10 +1,6 @@
 # valleForm Playground
 
-> 
-
-## Features
-
-- ?????
+> View and test you [valleForm](https://github.com/valleweb/valleForm) on the fly.
 
 ## Development
 

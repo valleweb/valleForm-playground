@@ -6,7 +6,10 @@ const currentCache = 'cache-0';
 
 const filesFromCache = [
   '/index.html',
-  '/bundle.js'
+  '/bundle.js',
+  '/style.css',
+  '/valleForm.css',
+  '/bower_components/'
 ];
 
 // --------------
