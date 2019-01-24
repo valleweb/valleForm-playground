@@ -131,7 +131,7 @@ const Home = () => {
 
           <input 
             className = 'input'
-            placeholder = 'filename.extension'
+            placeholder = 'filename'
             { ...fileName }
           />
 
