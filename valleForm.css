@@ -1,0 +1,203 @@
+.valleForm {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* ------- Header ------- */
+
+.valleForm__switch {
+  margin-left: auto;
+}
+
+/* ------- Main ------- */
+
+.valleForm__row {
+  display: flex;
+  width: 100%;
+  min-height: 87px; /* For fix issue #15 in desktop devices */
+}
+
+@media screen and (max-width: 600px) {
+  .valleForm__row {
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+.valleForm__input {
+  width: calc(100% - 10px);
+  min-width: 0;
+  margin: 0 5px;
+  padding: 0;
+  border-width: 0;
+}
+
+.valleForm__input--small {
+  max-width: 300px;
+}
+
+.valleForm__select {
+  width: calc(100% - 10px);
+  margin: 0 5px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 600px) {
+  .valleForm-select {
+    max-width: 100%;
+  }
+}
+
+.valleForm__select--big {
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+/* ------- Footer ------- */
+
+.valleForm__sub {
+  margin-top: 32px;
+  margin-right: auto;
+  font-size: 12px;
+  color: rgb(80, 177, 186);
+}
+
+.valleForm__speedDial {
+  margin-top: 16px;
+  margin-left: auto;
+  font-size: 14px;
+}
+
+.valleForm__speedDial__actions {
+  text-align: right;
+}
+
+.valleForm__speedDial__save {
+  --valle-speed-dial-action-fab-color: #7bcc02;
+}
+
+.valleForm__speedDial__edit {
+  --valle-speed-dial-action-fab-color: #ff6a00;
+}
+
+.valleForm__speedDial__delete {
+  --valle-speed-dial-action-fab-color: #ff0043;
+}
+
+.valleForm__speedDial__cancel {
+  --valle-speed-dial-action-fab-color: #4c4c48;
+}
+
+.valleForm__snackbar {
+  --width: 568px;
+  align-items: center;
+  background: #323232;
+  border-radius: 2px;
+  bottom: 0;
+  box-sizing: border-box;
+  color: #fff;
+  display: none;
+  font-size: 14px;
+  height: 48px;
+  left: calc(50% - calc(var(--width) / 2));
+  max-width: var(--width);
+  padding: 0 24px;
+  position: fixed;
+  transform: translateY(48px);
+  width: 100%;
+  z-index: 999;
+}
+
+@media screen and (max-width: 600px) {
+  .valleForm__snackbar {
+    --width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .valleForm__snackbar {
+    --width: 250px;
+  }
+}
+
+.valleForm__snackbar--open {
+  animation: show 5s;
+  display: flex;
+}
+
+.valleForm__snackbar__icon {
+  margin-right: 12px;
+}
+
+@keyframes show {
+  0%  { transform: translateY(48px); }
+  20% { transform: translateY(0); }
+  80% { transform: translateY(0); }
+  100% { transform: translateY(48px); display: none; }
+}
+
+.valleForm__switch {
+  display: block;
+}
+
+.valleForm__switch__label {
+  margin: 0 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: var(--valle-label-switch-color, #666666);
+}
+
+.valleForm__switch__input {
+  display: none;
+}
+
+.valleForm__switch--disabled .valleForm__switch__label {
+  color: rgba(0, 0, 0, .38);
+}
+
+.valleForm__switch__toggle {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  width: 36px;
+  height: 12px;
+  background-color: var(--valle-switch-background, #dddddd);
+  border-radius: 30px;
+  transition: background-color .4s;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.valleForm__switch--disabled .valleForm__switch__toggle {
+  cursor: default;
+  --valle-switch-background: #eae9e9;
+}
+
+.valleForm__switch__toggle::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: var(--valle-switch-toggle, #81898a);
+  border-radius: 50%;
+  transition: transform .4s, background-color .4s;
+}
+
+.valleForm__switch--disabled .valleForm__switch__toggle::after {
+  --valle-switch-toggle: #d2d2d2;
+}
+
+.valleForm__switch__input:checked + .valleForm__switch__toggle {
+  background-color: var(--valle-switch-background-checked, #cbefd8);
+}
+
+.valleForm__switch__input:checked + .valleForm__switch__toggle::after {
+  transform: translateX(16px);
+  background-color: var(--valle-switch-toggle-checked, #62aeb3);
+}
