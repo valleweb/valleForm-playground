@@ -45,6 +45,7 @@ $ yarn test
 - `server` - Start local server.
 - `build` - Build the App.
 - `analyze` - Analyze the webpack bundle.
+- `deploy` - Deploy to gh-pages.
 
 <hr>
 
