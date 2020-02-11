@@ -1,7 +1,7 @@
 {
   "name": "valle-input",
   "description": "Awesome valle input element",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "keywords": [
     "polymer",
     "web-components"
@@ -29,7 +29,6 @@
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
-    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
     "iron-test-helpers": "^2.0.0"
   }
 }

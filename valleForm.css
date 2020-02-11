@@ -37,6 +37,10 @@
   max-width: 300px;
 }
 
+.valleForm__input--description {
+  min-width: calc(50% - 10px);
+}
+
 .valleForm__select {
   width: calc(100% - 10px);
   margin: 0 5px;
@@ -55,6 +59,77 @@
   display: block;
   min-width: 100%;
   max-width: 100%;
+}
+
+.valleForm__textarea {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - 10px);
+  min-width: 0;
+  margin: 0 5px;
+  padding: 0;
+}
+
+.valleForm__textarea__input {
+  border: 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid rgba(0, 0, 0, .87);
+  color: rgba(0, 0, 0, .87);
+  display: block;
+  font-size: 16px;
+  margin-top: calc(29px);
+  outline: 0;
+  padding: 0;
+  padding-top: 8px;
+  width: 100%;
+  height: 90px;
+}
+
+.valleForm__textarea__input:focus {
+  border-color: var(--valle-input-color, rgb(5, 159, 183));
+}
+
+.valleForm__textarea__label {
+  color: rgba(0, 0, 0, .54);
+  display: block;
+  font-size: 12px;
+  left: 0;
+  padding-top: 16px;
+  position: absolute;
+  top: 0;
+}
+
+.valleForm__textarea__input:focus + .valleForm__textarea__label {
+  color: var(--valle-input-color, rgba(5, 159, 183, .87));
+}
+
+.valleForm__textarea__description {
+  color: rgba(0, 0, 0, .54);
+  display: block;
+  font-size: 12px;
+  padding-top: 8px;
+}
+
+.valleForm__textarea--disabled .valleForm__textarea__label {
+  color: rgba(0, 0, 0, .38);
+}
+
+.valleForm__textarea--disabled .valleForm__textarea__input {
+  background-color: initial;
+  border-bottom: 2px solid rgba(0, 0, 0, .38);
+  color: rgba(0, 0, 0, .38);
+  cursor: no-drop;
+}
+
+.valleForm__textarea--error .valleForm__textarea__description,
+.valleForm__textarea--error .valleForm__textarea__label,
+.valleForm__textarea--error .valleForm__textarea__input:focus + .valleForm__textarea__label {
+  color: rgba(255, 0, 0, .87);
+}
+
+.valleForm__textarea--error .valleForm__textarea__input {
+  border-color: rgb(255, 0, 0);
 }
 
 /* ------- Footer ------- */
@@ -78,18 +153,27 @@
 
 .valleForm__speedDial__save {
   --valle-speed-dial-action-fab-color: #7bcc02;
+  white-space: nowrap;
 }
 
 .valleForm__speedDial__edit {
   --valle-speed-dial-action-fab-color: #ff6a00;
+  white-space: nowrap;
 }
 
 .valleForm__speedDial__delete {
   --valle-speed-dial-action-fab-color: #ff0043;
+  white-space: nowrap;
 }
 
 .valleForm__speedDial__cancel {
   --valle-speed-dial-action-fab-color: #4c4c48;
+  white-space: nowrap;
+}
+
+.valleForm__speedDial__new {
+  --valle-speed-dial-action-fab-color: #7cc705;
+  white-space: nowrap;
 }
 
 .valleForm__snackbar {

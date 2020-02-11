@@ -124,12 +124,12 @@
 
       :host([disabled]) .input {
         background-color: initial;
-        border-bottom: 1px dotted rgba(0, 0, 0, .42);
+        border-bottom: 2px solid rgba(0, 0, 0, .38);
         color: rgba(0, 0, 0, .38);
       }
 
       :host([disabled]) .input:hover {
-        cursor: default;
+        cursor: no-drop;
       }
 
       :host([disabled]) .button:hover {
@@ -450,7 +450,8 @@
           const optionValue = option.getAttribute('value'); // TODO: Resolve undefined result on option.value (option.value broken the element, but cant catch from unit tests)
 
           this.value = optionValue;
-          this.$.input.value = optionValue;
+          this.$.input.value = option.innerText;
+          this.$.input['data-valle-value'] = optionValue;
 
           this.$.listbox.setAttribute('aria-activedescendant', option.id);
 
