@@ -10,6 +10,73 @@
   margin-left: auto;
 }
 
+/* ------- Tabs ------- */
+
+.valleForm__tabs__titles {
+  width: 100%;
+  border-bottom: 2px solid rgba(0,0,0,.12);
+  margin: 8px 4px 0 4px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.valleForm__tabs__title {
+  color: rgba(70, 70, 70, 0.54);
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-bottom-width: 2px;
+  background-color: #efefef;
+  margin: 0 6px -2px 0;
+  position: relative;
+  white-space: nowrap;
+}
+
+.valleForm__tabs__title:hover {
+  cursor: pointer;
+  color: var(--highlight-color, rgb(5, 159, 183)); 
+}
+
+.valleForm__tabs__title:focus {
+  outline: none;
+}
+
+.valleForm__tabs__title--selected {
+  background-color: #fff;
+  color: var(--highlight-color, rgb(5, 159, 183));
+  border-bottom-color: #fff;
+}
+
+.valleForm__tabs__title--selected:hover {
+  cursor: default;
+}
+
+/* .valleForm__tabs__badge {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background-color: rgba(255, 56, 56, 0.787);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  color: #fff;
+} */
+
+.valleForm__tabs__tab {
+  display: block;
+  width: 100%;
+  display: none;
+}
+
+.valleForm__tabs__tab--visible {
+  display: block;
+}
+
 /* ------- Main ------- */
 
 .valleForm__row {
@@ -25,10 +92,16 @@
   }
 }
 
-.valleForm__input {
+.valleForm__input__container {
   width: calc(100% - 10px);
   min-width: 0;
   margin: 0 5px;
+  position: relative;
+}
+
+.valleForm__input {
+  width: 100%;
+  margin: 0;
   padding: 0;
   border-width: 0;
 }
@@ -41,11 +114,55 @@
   min-width: calc(50% - 10px);
 }
 
+.valleForm__input__button {
+  border: 0;
+  background: #fff;
+  position: absolute;
+  right: 0px;
+  top: 44px;
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  transition: background .3s;
+}
+
+.valleForm__input__button:hover {
+  cursor: pointer;
+}
+
+.valleForm__input__button--disabled:hover {
+  cursor: no-drop;
+}
+
+.valleForm__input__button:focus {
+  background: #ecebeb;
+  outline: none;
+}
+
+.valleForm__input__button:active {
+  background: #c8c8c8;
+}
+
+.valleForm__input__button--disabled:active{
+  background: #fff;
+}
+
+.valleForm__input__icon {
+  width: 14px;
+  fill: rgba(0, 0, 0, .38);
+}
+
+.valleForm__input__button:hover .valleForm__input__icon {
+  fill: var(--valle-input-color, rgba(5, 159, 183, .87));
+}
+
+.valleForm__input__button--disabled:hover .valleForm__input__icon {
+  fill: rgba(0, 0, 0, .38);
+}
+
 .valleForm__select {
   width: calc(100% - 10px);
   margin: 0 5px;
-  overflow-y: auto;
-  overflow-x: hidden;
   max-width: 400px;
 }
 
@@ -259,7 +376,7 @@
 }
 
 .valleForm__switch--disabled .valleForm__switch__toggle {
-  cursor: default;
+  cursor: no-drop;
   --valle-switch-background: #eae9e9;
 }
 
